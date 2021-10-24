@@ -4,7 +4,7 @@ import 'package:logisticsmobile/data/data_sources/delivery_remote_data_source.da
 import 'package:logisticsmobile/data/models/trip.dart';
 
 import 'package:logisticsmobile/domain/repositories/trip_repository.dart';
-import '../../domain/entities/app_error.dart';
+import '../../common/error/app_error.dart';
 import '../data_sources/movie_local_data_source.dart';
 
 

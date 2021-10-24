@@ -9,7 +9,19 @@ abstract class DriverState extends Equatable {
 
 
 
-class DriverError extends DriverState {}
+class DriverError extends DriverState {
+
+ final String message;
+
+  DriverError(this.message);
+
+  @override
+  List<Object> get props => [message];
+
+
+
+
+}
 
 
 class InitialDriverState extends DriverState {}

@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 
-import '../../domain/entities/app_error.dart';
+import '../../common/error/app_error.dart';
 import '../../domain/repositories/auth_repository.dart';
 import '../core/unathorised_exception.dart';
 import '../data_sources/auth_local_data_source.dart';

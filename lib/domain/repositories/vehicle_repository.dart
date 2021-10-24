@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:logisticsmobile/data/models/vehicle.dart';
 
-import '../entities/app_error.dart';
+import '../../common/error/app_error.dart';
 
 abstract class VehicleRepository {
   Future<Either<AppError, List<Vehicle>>> getVehicles();

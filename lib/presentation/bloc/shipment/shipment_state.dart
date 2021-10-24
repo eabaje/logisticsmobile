@@ -9,7 +9,18 @@ abstract class ShipmentState extends Equatable {
 
 
 
-class ShipmentError extends ShipmentState {}
+class ShipmentError extends ShipmentState {
+
+ final String message;
+
+  ShipmentError(this.message);
+
+  @override
+  List<Object> get props => [message];
+
+
+
+}
 
 
 class InitialShipmentState extends ShipmentState {}

@@ -6,7 +6,7 @@ import 'package:logisticsmobile/domain/usecases/auth/login_user.dart';
 import 'package:logisticsmobile/domain/usecases/auth/logout_user.dart';
 
 import '../../../common/constants/translation_constants.dart';
-import '../../../domain/entities/app_error.dart';
+import '../../../common/error/app_error.dart';
 import '../../../domain/entities/login_request_params.dart';
 import '../../../domain/entities/no_params.dart';
 import '../loading/loading_cubit.dart';
@@ -36,7 +36,7 @@ class LoginCubit extends Cubit<LoginState> {
     emit(eitherResponse.fold(
       (l) {
         var message = getErrorMessage(l.appErrorType);
-        print(message);
+       // print(message);
         return LoginError(message);
       },
       (r) => LoginSuccess(),
@@ -53,17 +53,5 @@ class LoginCubit extends Cubit<LoginState> {
     emit(LogoutSuccess());
   }
 
-  String getErrorMessage(AppErrorType appErrorType) {
-    switch (appErrorType) {
-      case AppErrorType.network:
-        return TranslationConstants.noNetwork;
-      case AppErrorType.api:
-      case AppErrorType.database:
-        return TranslationConstants.somethingWentWrong;
-      case AppErrorType.sessionDenied:
-        return TranslationConstants.sessionDenied;
-      default:
-        return TranslationConstants.wrongUsernamePassword;
-    }
-  }
+ 
 }

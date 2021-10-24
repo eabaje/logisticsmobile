@@ -9,7 +9,20 @@ abstract class TripState extends Equatable {
 
 
 
-class TripError extends TripState {}
+class TripError extends TripState {
+
+ final String message;
+
+  TripError(this.message);
+
+  @override
+  List<Object> get props => [message];
+
+
+
+
+
+}
 
 
 class InitialTripState extends TripState {}

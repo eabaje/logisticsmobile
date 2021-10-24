@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../../domain/entities/app_error.dart';
+import '../../common/error/app_error.dart';
 import '../../domain/repositories/app_repository.dart';
 import '../data_sources/language_local_data_source.dart';
 

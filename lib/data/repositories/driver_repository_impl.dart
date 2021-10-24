@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:logisticsmobile/data/models/driver.dart';
 import 'package:logisticsmobile/domain/repositories/driver_repository.dart';
-import '../../domain/entities/app_error.dart';
+import '../../common/error/app_error.dart';
 import '../data_sources/movie_local_data_source.dart';
 import '../data_sources/driver_vehicle_remote_data_source.dart';
 

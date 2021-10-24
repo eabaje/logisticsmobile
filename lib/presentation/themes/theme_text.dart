@@ -101,3 +101,9 @@ extension ThemeTextExtension on TextTheme {
   TextStyle? get orangeSubtitle1 =>
       subtitle1?.copyWith(color: Colors.orangeAccent);
 }
+const double FONT_NORMAL = 16;
+const double FONT_SMALL = 14;
+const double FONT_XSMALL = 13;
+const double FONT_XXSMALL = 12;
+
+const double GAP_SMALL = 8;

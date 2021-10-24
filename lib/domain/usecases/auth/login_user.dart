@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:logisticsmobile/domain/entities/app_error.dart';
+import 'package:logisticsmobile/common/error/app_error.dart';
 import 'package:logisticsmobile/domain/entities/login_request_params.dart';
 import 'package:logisticsmobile/domain/repositories/auth_repository.dart';
 import '../usecase.dart';

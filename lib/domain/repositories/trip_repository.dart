@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:logisticsmobile/data/models/trip.dart';
 
-import '../entities/app_error.dart';
+import '../../common/error/app_error.dart';
 
 abstract class TripRepository {
 

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:logisticsmobile/data/models/driver.dart';
 
-import '../entities/app_error.dart';
+import '../../common/error/app_error.dart';
 
 abstract class DriverRepository {
   Future<Either<AppError, List<Driver>>> getDrivers();

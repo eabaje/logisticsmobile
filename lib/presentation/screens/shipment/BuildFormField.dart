@@ -4,11 +4,16 @@ class BuildFormField extends StatefulWidget {
   final String hintText;
   final String label;
 
+
+
   BuildFormField(this.hintText, this.label);
 
   @override
   _FormFieldState createState() => _FormFieldState();
 }
+
+
+
 
 class _FormFieldState extends State<BuildFormField> {
   @override
@@ -16,6 +21,7 @@ class _FormFieldState extends State<BuildFormField> {
     return Container(
       padding: const EdgeInsets.fromLTRB(13, 0.0, 13, 0.0),
       child: TextField(
+      
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
           hintText: widget.hintText,

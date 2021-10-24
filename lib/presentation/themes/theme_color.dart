@@ -8,3 +8,9 @@ class AppColor {
   static const Color violet = Color(0xFFA74DBC);
   static const Color tartOrange =Color(0xFF4A4A58);
 }
+//you may define these in colors.dart file
+const PrimaryBlueColor = Color(0xFF40A8F4);
+const FaintPinkColor = Color(0xffEA7F8B);
+const DarkBlue = Color(0xff2D3B51);
+const Grey = Color(0xFFa19f9d);
+const LightGrey = Color(0xdddedddc);

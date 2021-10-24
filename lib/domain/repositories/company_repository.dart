@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:logisticsmobile/data/models/company.dart';
 
 
-import '../entities/app_error.dart';
+import '../../common/error/app_error.dart';
 
 abstract class CompanyRepository {
   Future<Either<AppError, List<Company>>> getCompanys();

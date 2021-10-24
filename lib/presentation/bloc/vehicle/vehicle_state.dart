@@ -7,7 +7,7 @@ abstract class VehicleState extends Equatable {
   List<Object> get props => [];
 }
 
-
+ 
 
 class VehicleError extends VehicleState {
 
@@ -17,6 +17,20 @@ final AppErrorType errorType;
 
   @override
   List<Object> get props => [errorType];
+
+
+  
+}
+
+class VehicleErrorMsg extends VehicleState {
+
+final String message;
+
+  VehicleErrorMsg(this.message);
+
+  @override
+  List<Object> get props => [message];
+
 
   
 }
