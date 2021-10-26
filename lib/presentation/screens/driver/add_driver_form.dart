@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:logisticsmobile/presentation/screens/shipment/ProgressBar.dart';
 import 'package:logisticsmobile/presentation/screens/shipment/ServiceDropdown.dart';
+import 'package:logisticsmobile/presentation/widgets/country_list.dart';
 import 'package:logisticsmobile/presentation/widgets/form/form_datepicker.dart';
 import 'package:logisticsmobile/presentation/widgets/form/form_dropdown.dart';
 import 'package:logisticsmobile/presentation/widgets/form/form_text_input.dart';
@@ -190,7 +191,7 @@ _picUrl = TextEditingController();
                 
              
             //  const SizedBox( height: 30),
-
+               const ContryList(),
                FormTextField(
                 controller: _country!,
                 label:"Country" ,

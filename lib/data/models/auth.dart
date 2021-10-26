@@ -1,40 +1,32 @@
 class Auth {
-	String? firstName;
-	String? lastName;
+	String? userId;
+	String? userName;
+  String? password;
 	String? email;
-	String? phone;
-	String? address;
-	String? city;
-	String? country;
-	String? userPicUrl;
+	String? accessToken;
 	List<String>? roles;
-
-	Auth({this.firstName, this.lastName, this.email, this.phone, this.address, this.city, this.country, this.userPicUrl, this.roles});
+// message: 'Success',
+         
+	Auth({this.userId, this.userName,this.password, this.email, this.accessToken,  this.roles});
 
 	Auth.fromJson(Map<String, dynamic> json) {
-		firstName = json['FirstName'];
-		lastName = json['LastName'];
+		userId = json['UserId'];
+		userName = json['UserName'];
+    password = json['Password'];
 		email = json['Email'];
-		phone = json['Phone'];
-		address = json['Address'];
-		city = json['City'];
-		country = json['Country'];
-		userPicUrl = json['UserPicUrl'];
-		roles = json['roles'];
+		accessToken = json['AccessToken'];
+		roles = json['Roles'];
 
 	}
 
 	Map<String, dynamic> toJson() {
 		final Map<String, dynamic> data = <String, dynamic>{};
-		data['FirstName'] = firstName;
-		data['LastName'] = lastName;
+		data['UserId'] = userId;
+		data['UserName'] = userName;
+	  data['Password'] = password;
 		data['Email'] = email;
-		data['Phone'] = phone;
-		data['Address'] = address;
-		data['City'] = city;
-		data['Country'] = country;
-		data['UserPicUrl'] = userPicUrl;
-		data['roles'] = roles;
+		data['AccessToken'] = accessToken;
+		data['Roles'] = roles;
 
 		return data;
 	}

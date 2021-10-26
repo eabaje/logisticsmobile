@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
+import 'package:logisticsmobile/data/models/auth.dart';
 
 import '../../common/error/app_error.dart';
 import '../../domain/repositories/auth_repository.dart';
@@ -18,9 +19,11 @@ class AuthRepositoryImpl extends AuthRepository {
     this._authLocalDataSource,
   );
 
-  Future<Either<AppError, RequestTokenModel>> _getRequestToken() async {
-    try {
-      final response = await _authRemoteDataSource.getRequestToken();
+  
+  @override
+  Future<Either<AppError, Auth>> signin(String username,String password) async {
+     try {
+      final response = await _authRemoteDataSource.signIn(username, password);
       return Right(response);
     } on SocketException {
       return const Left(AppError(AppErrorType.network));
@@ -30,42 +33,17 @@ class AuthRepositoryImpl extends AuthRepository {
   }
 
   @override
-  Future<Either<AppError, bool>> loginUser(Map<String, dynamic> body) async {
-    final requestTokenEitherResponse = await _getRequestToken();
-    final token1 = requestTokenEitherResponse
-        .getOrElse(() => RequestTokenModel())
-        .requestToken;
-
+  Future<Either<AppError, String>> signup(Map<String, dynamic> params) async {
     try {
-      body.putIfAbsent('request_token', () => token1);
-      final validateWithLoginToken =
-          await _authRemoteDataSource.validateWithLogin(body);
-      final sessionId = await _authRemoteDataSource
-          .createSession(validateWithLoginToken.toJson());
-      if (sessionId != null) {
-        await _authLocalDataSource.saveSessionId(sessionId);
-        return const Right(true);
-      }
-      return const Left(AppError(AppErrorType.sessionDenied));
+      final response = await _authRemoteDataSource.signUp(params);
+      return Right(response);
     } on SocketException {
       return const Left(AppError(AppErrorType.network));
-    } on UnauthorisedException {
-      return const Left(AppError(AppErrorType.unauthorised));
     } on Exception {
       return const Left(AppError(AppErrorType.api));
     }
   }
 
-  @override
-  Future<Either<AppError, void>> logoutUser() async {
-    final sessionId = await _authLocalDataSource.getSessionId();
-    if (sessionId != null) {
-      await Future.wait([
-        _authRemoteDataSource.deleteSession(sessionId),
-        _authLocalDataSource.deleteSessionId(),
-      ]);
-    }
-  //  print(await _authLocalDataSource.getSessionId());
-    return Right(Unit);
-  }
+
+
 }

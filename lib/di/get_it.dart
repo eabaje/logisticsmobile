@@ -114,11 +114,11 @@ getItInstance.registerLazySingleton<TripRepository>(
   getItInstance.registerLazySingleton<GetPreferredTheme>(
       () => GetPreferredTheme(getItInstance()));
 
-  getItInstance
-      .registerLazySingleton<LoginUser>(() => LoginUser(getItInstance()));
+  // getItInstance
+  //     .registerLazySingleton<signIn>(() => LoginUser(getItInstance()));
 
-  getItInstance
-      .registerLazySingleton<LogoutUser>(() => LogoutUser(getItInstance()));
+  // getItInstance
+  //     .registerLazySingleton<LogoutUser>(() => LogoutUser(getItInstance()));
 
 
 
@@ -142,9 +142,9 @@ getItInstance.registerFactory(() => VehicleCubit(getItInstance()));
 
 
 getItInstance.registerFactory(() => LoginCubit(
-        loginUser: getItInstance(),
-        logoutUser: getItInstance(),
-        loadingCubit: getItInstance(),
+        // loginUser: getItInstance(),
+        // logoutUser: getItInstance(),
+        loadingCubit: getItInstance(), authRepository: getItInstance(),
       ));
 
 

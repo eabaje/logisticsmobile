@@ -5,12 +5,12 @@ import 'package:logisticsmobile/domain/repositories/auth_repository.dart';
 import '../usecase.dart';
 
 
-class LogoutUser extends UseCase<void, NoParams> {
-  final AuthRepository _authenticationRepository;
+// class LogoutUser extends UseCase<void, NoParams> {
+//   final AuthRepository _authenticationRepository;
 
-  LogoutUser(this._authenticationRepository);
+//   LogoutUser(this._authenticationRepository);
 
-  @override
-  Future<Either<AppError, void>> call(NoParams noParams) async =>
-      _authenticationRepository.logoutUser();
-}
+//   @override
+//   Future<Either<AppError, void>> call(NoParams noParams) async =>
+//       _authenticationRepository.logoutUser();
+// }
